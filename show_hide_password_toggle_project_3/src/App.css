@@ -1,0 +1,15 @@
+/* Hide the eye icon in WebKit browsers */
+/* the little eye icon in a password field comes from the browser itself — it’s not something React is adding.
+You can disable it using a CSS pseudo-element override that hides the browser’s built-in toggle */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container,
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-reveal {
+  display: none !important;
+}
