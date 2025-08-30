@@ -25,7 +25,6 @@ function Accordian_2() {
         setActiveFAQ(ActiveFAQ);
         console.log("Index",ActiveFAQ);
     }
-
     return (
         <div style={{ maxWidth: "700px", margin: "2rem auto", fontFamily: "Poppins, sans-serif" }}>
             <h1 style={{ 
