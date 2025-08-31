@@ -5,7 +5,7 @@ function App() {
   // State for Adding Data in Buttons
   let [adddatainbtn, setaddbtn] = useState([]);
   // State for Count
-  let [count, setcount] = useState(null);
+  let [count, setcount] = useState(0);
 
   let addNotes = (count) => {
     setaddbtn([...adddatainbtn, count]);
@@ -29,7 +29,7 @@ function App() {
         </button>
 
         {/* Adding Notes Component */}
-        <Notes notes={adddatainbtn} updateparent={setaddbtn}/>
+        <Notes notes={adddatainbtn} updateparent={setaddbtn} counter = {count} setcounter = {setcount}/>
       </div>
     </>
   )

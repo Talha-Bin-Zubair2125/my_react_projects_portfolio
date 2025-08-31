@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
-function Notes({ notes, updateparent }) {
+function Notes({ notes, updateparent, counter, setcounter }) {
   // State for Edit
   let [edit_data, seteditdata] = useState(null);
   // State for Delete
   let [delete_data, setdelete] = useState(null);
   // State for Textarea
   let [dataintextarea, setdata] = useState([]);
-
   // Edit
   let editdata = (index) => seteditdata(index);
 
-  // Delete
-  let datatodelete = (index) => { 
-    updateparent(notes.filter((_, i) => i !== index));  
-    setdata(dataintextarea.filter((_,i)=> i !== index)); 
+  let deldata = (index) =>{
+    console.log("index is:",index);
+    setdelete(index);
+  }
+  let confirmDel = (index) =>{
+    updateparent(notes.filter((_, i) => i !== index));
+    setdata(dataintextarea.filter((_,i)=> i !== index));
     setdelete(null);
-  };
-  let deleteindex = (index) => setdelete(index);
+  }
 
-  let submitedit = (index) =>  seteditdata(false);
+  let submitedit = (index) =>  seteditdata(null);
 
   let datatoedit = (index, value) => {
     const updatedNotes = [...dataintextarea];
@@ -27,7 +28,13 @@ function Notes({ notes, updateparent }) {
     setdata(updatedNotes);
     let updatedTasks = notes.map((t, i) => (i === index ? value : t));
     updateparent(updatedTasks);
+    console.log("Edit",dataintextarea);
+    console.log("Edit Parent",updatedTasks);
   };
+
+  useEffect(() => {
+    setdata(notes);   
+  }, [notes]);
 
   return (
     <div style={styles.notesContainer}>
@@ -40,24 +47,20 @@ function Notes({ notes, updateparent }) {
             value={dataintextarea[index]}
             onChange={(e) => datatoedit(index, e.target.value)}
           ></textarea>
-
           <div style={styles.buttonGroup}>
             <button
               style={{ ...styles.btn, ...styles.deleteBtn }}
-              onClick={() => deleteindex(index)}
+              onClick={() => deldata(index)}
             >
               🗑️ Delete
             </button>
-            
             {delete_data === index && (
               <div style={styles.confirmBox}>
-                <input
-                  type="text"
-                  defaultValue={dataintextarea[index]}
-                  style={styles.confirmInput}
-                />
+                Are you Sure?
                 <div style={styles.confirmBtns}>
-                  <button style={styles.confirmYes} onClick={() => {datatodelete(index)
+                  <button style={styles.confirmYes} onClick={() => {confirmDel(index)
+                    counter = counter - 1;
+                    setcounter(counter);
                   }}>
                     ✅ Yes
                   </button>
@@ -85,7 +88,7 @@ function Notes({ notes, updateparent }) {
                 />
                 <button
                   style={{ ...styles.btn, ...styles.submitBtn }}
-                  onClick={() => { submitedit(index);}}
+                  onClick={() => {submitedit(index);}}
                 >
                   ✅ Submit
                 </button>
