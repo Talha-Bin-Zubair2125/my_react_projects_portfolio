@@ -1,0 +1,166 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* Card */
+.login-box {
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-in-out;
+  text-align: center;
+}
+
+/* Heading */
+.login-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0px 4px 12px rgba(106, 17, 203, 0.2);
+  outline: none;
+}
+
+/* Login Button */
+.btn-group {
+  margin: 15px 0;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+}
+
+/* Signup Button */
+.btn-signup {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: 1.5px solid #6a11cb;
+  background: transparent;
+  border-radius: 10px;
+  color: #6a11cb;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-signup:hover {
+  background: #6a11cb;
+  color: #fff;
+}
+
+/* Links */
+.signup-section {
+  margin-top: 20px;
+}
+
+.signup-section a {
+  text-decoration: none;
+  color: #2575fc;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.signup-section a:hover {
+  color: #6a11cb;
+}
+
+/* Messages */
+.login-message {
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.login-message.success {
+  background: #e6ffed;
+  color: #2f8f46;
+  border: 1px solid #2f8f46;
+}
+
+.login-message.error {
+  background: #ffe6e6;
+  color: #c62828;
+  border: 1px solid #c62828;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 25px 20px;
+  }
+
+  .login-heading {
+    font-size: 1.6rem;
+  }
+
+  .btn-login {
+    font-size: 14px;
+  }
+}
