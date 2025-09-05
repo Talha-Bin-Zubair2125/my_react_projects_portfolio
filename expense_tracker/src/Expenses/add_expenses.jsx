@@ -33,9 +33,6 @@ function Add_expenses({ totalbudget, amount_spent, amount_remaining, funtion_for
     funtion_for_amount_spent(Cost + totalofitems);
     funtion_for_amount_remaining(totalbudget - Cost);
     showToast("Expense added successfully ", "success");
-
-    setAdditem("");
-    setCost("");
     };
 
     let data_to_del = (index) => {
@@ -43,7 +40,7 @@ function Add_expenses({ totalbudget, amount_spent, amount_remaining, funtion_for
     funtion_for_budget(totalbudget + Cost);
     funtion_for_amount_spent(totalofitems - Cost);
     funtion_for_amount_remaining(totalbudget + Cost);
-    setdeletedata(null);
+    
     showToast("Expense deleted ", "error");
     };
 
