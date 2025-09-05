@@ -1,0 +1,113 @@
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1, h2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  width: 90%;
+  max-width: 300px;
+  display: block;
+}
+
+/* Add Button */
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #2980b9;
+}
+button:active {
+  transform: scale(0.97);
+}
+
+/* Table Styling */
+.expense-table {
+  width: 95%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.expense-table th,
+.expense-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: center;
+}
+.expense-table th {
+  background: #3498db;
+  color: white;
+}
+.expense-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+.expense-table tr:hover {
+  background: #ecf6ff;
+}
+
+/* Action Buttons */
+.expense-table td button {
+  background: #2ecc71;
+}
+.expense-table td button:hover {
+  background: #27ae60;
+}
+.expense-table td button:nth-child(2) {
+  background: #e74c3c;
+}
+.expense-table td button:nth-child(2):hover {
+  background: #c0392b;
+}
+
+/* Confirm Delete Section */
+.expense-table input[readonly] {
+  border: none;
+  background: #f1f1f1;
+  padding: 0.4rem;
+  width: 70px;
+  text-align: center;
+  border-radius: 6px;
+}
+/* Toast Styling */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  animation: fadeInOut 2.5s ease forwards;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.toast.success {
+  background: #27ae60;
+}
+.toast.error {
+  background: #e74c3c;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}

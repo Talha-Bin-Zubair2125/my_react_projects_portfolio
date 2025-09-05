@@ -1,0 +1,64 @@
+/* Container */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card Styling */
+.card {
+  padding: 1rem;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Budget Colors */
+.budget {
+  border-left: 6px solid #3498db;
+}
+.remaining {
+  border-left: 6px solid #27ae60;
+}
+.spent {
+  border-left: 6px solid #e74c3c;
+}
+
+/* Edit Button */
+.edit-btn {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.edit-btn:hover {
+  background: #2980b9;
+}
+
+/* Input & Submit */
+input[type="text"] {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
